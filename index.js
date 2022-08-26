@@ -133,7 +133,9 @@ class HtmlWebpackPlugin {
       require: require,
       htmlWebpackPluginPublicPath: publicPath,
       URL: require('url').URL,
-      __filename: templateWithoutLoaders
+      __filename: templateWithoutLoaders,
+      TextEncoder: TextEncoder,
+      TextDecoder: TextDecoder
     });
     const vmScript = new vm.Script(source, { filename: templateWithoutLoaders });
     // Evaluate code and cast to string
